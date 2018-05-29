@@ -1,0 +1,6 @@
+---
+- name: Ensure all package are installed.
+  yum:
+    name: "{{ item }}"
+    state: installed
+  with_items: "{{ tomcat_packages }}"

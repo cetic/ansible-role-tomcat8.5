@@ -1,0 +1,16 @@
+---
+dependencies:
+  - geerlingguy.java
+
+galaxy_info:
+  author: cetic
+  description: Tomcat v8.5
+  company: "CETIC asbl"
+  license: "MIT license"
+  min_ansible_version: 2.2
+  platforms:
+  - name: EL
+    versions:
+    - 7
+  galaxy_tags:
+    - tomcat, tomcat8, centos, java

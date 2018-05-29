@@ -1,0 +1,6 @@
+hosts
+*.retry
+*.vagrant
+*.git
+geerlingguy*
+roles
