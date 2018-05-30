@@ -51,9 +51,9 @@ You can set variables related to tomcat here.
 
 ## Tests
 
-### testing locally with Vagrant
+### testing locally with [Vagrant](https://www.vagrantup.com/)
 
-You can test this ansible role by using ´vagrant´. See the Vagrantfile.
+You can test this ansible role by using `vagrant`. See the Vagrantfile.
 
 ### testing with Travis
 
