@@ -46,7 +46,7 @@ You can set variables related to tomcat here.
   become: true
   roles:
     - role: geerlingguy.java
-    - role: cetic.tomcat8.5
+    - role: cetic.tomcat
 ```
 
 ## Tests
