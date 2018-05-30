@@ -20,14 +20,14 @@ script:
   # Run tests.
   - tests/test.sh
 
+ # TODTO
  # Make sure Tomcat is running.
-  - 'docker exec --tty ${container_id} env TERM=xterm curl http://localhost:$http_port'
+ # - 'docker exec --tty ${container_id} env TERM=xterm curl http://localhost:$http_port'
 
 after_failure:
-  # Check what happened on systemd systems.   
-  - 'docker exec --tty ${container_id} env TERM=xterm systemctl -l status alfresco'
+  - 'docker exec --tty ${container_id} env TERM=xterm systemctl -l status tomcat'
   - 'docker exec --tty ${container_id} env TERM=xterm journalctl -xe --no-pager'
-  - 'docker exec --tty ${container_id} env TERM=xterm cat /opt/alfresco/tomcat/logs/catalina.out'
+  - 'docker exec --tty ${container_id} env TERM=xterm cat /opt/tomcat/logs/catalina.out'
 
 #instruct Travis to notify Galaxy when a build completes:
 notifications:

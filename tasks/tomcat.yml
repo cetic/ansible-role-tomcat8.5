@@ -6,7 +6,7 @@
   user: name={{ tomcat_user }} home={{ tomcat_user_home }} shell=/bin/nologin group={{ tomcat_group }} state=present
 
 - name: Create folder
-  file: path={{ tomcat_user_home }} state=directory owner={{ tomcat_user }} group={{ tomcat_group }} mode=0770
+  file: path={{ tomcat_user_home }} state=directory owner={{ tomcat_user }} group={{ tomcat_group }} mode=0755
   
 - name: Download tomcat {{ tomcat_version }}
   get_url:

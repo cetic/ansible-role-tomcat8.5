@@ -12,7 +12,6 @@ The ansible role allows you to install, for the moment, the version 8.5 of Tomca
 ## Requirements
 
 You can use this ansible role to set up java:
-* https://github.com/geerlingguy/ansible-role-mysql
 * https://github.com/geerlingguy/ansible-role-java
 
 ## Role Variables for Tomcat 8.5
@@ -21,13 +20,14 @@ Available variables are listed below, along with default values (see `defaults/m
 
 ### tomcat
 
-	tomcat_version: '7.0.61'
-	java_opts: '-Xms512m -Xmx1024m -Xss768k -XX:NewSize=256m -server'
-	tomcat_dir: '{{ home }}/tomcat'
+	tomcat_version: '8.5.31'
 	tomcat_port: '8080'
 	tomcat_port_ajp: '8009'
 	tomcat_port_https: '8443'
 	tomcat_port_shutdown: '8005'
+	tomcat_group: 'tomcat'
+	tomcat_user: 'tomcat'
+	tomcat_user_home: '/opt/tomcat'
 	
 You can set variables related to tomcat here.
 	
@@ -43,22 +43,26 @@ You can set variables related to tomcat here.
 
 ```yaml
 - hosts: tomcat
+  become: true
   roles:
     - role: geerlingguy.java
     - role: cetic.tomcat8.5
-      become: true
 ```
 
 ## Tests
 
-### testing localy with Vagrant
+### testing locally with Vagrant
+
+You can test this ansible role by using ´vagrant´. See the Vagrantfile.
 
 ### testing with Travis
+
+See the playbook used for Travis CI tests (tests/test.yml).
 
 ## Future improvements
 
 *  Provide more recent/different versions of Tomcat
-*  More OS support 
+*  More OS support
 
 Feel free to contribute.
 

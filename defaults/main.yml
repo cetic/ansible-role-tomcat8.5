@@ -6,8 +6,6 @@ java_home: '/lib/jvm/jre-1.8.0-openjdk'
 
 # tomcat
 tomcat_version: '8.5.31'
-java_opts: '-Xms512m -Xmx1024m -Xss768k -XX:NewSize=256m -server'
-tomcat_dir: '{{ alfresco_user_home }}/tomcat'
 tomcat_port: '8080'
 tomcat_port_ajp: '8009'
 tomcat_port_https: '8443'
