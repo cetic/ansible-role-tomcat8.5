@@ -1,7 +1,7 @@
 # Ansible Role: Tomcat v8.5
 
 [![Build Status](https://travis-ci.org/cetic/ansible-role-tomcat8.5.svg?branch=master)](https://travis-ci.org/cetic/ansible-role-tomcat8.5)
-[![Ansible Galaxy](https://img.shields.io/badge/galaxy-_cetic.tomcat8.5-blue.svg)](https://galaxy.ansible.com/cetic/tomcat8.5/)
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-_cetic.tomcat-blue.svg)](https://galaxy.ansible.com/cetic/tomcat/)
 
 Installs [Tomcat](http://tomcat.apache.org/) v8.5 on RHEL/CentOS 7 with [ansible](http://www.ansible.com/home).
 
