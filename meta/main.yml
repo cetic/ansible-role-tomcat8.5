@@ -13,4 +13,7 @@ galaxy_info:
     versions:
     - 7
   galaxy_tags:
-    - tomcat, tomcat8, centos, java
+    - tomcat
+    - tomcat8
+    - centos
+    - java

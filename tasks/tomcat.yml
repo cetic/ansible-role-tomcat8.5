@@ -7,7 +7,7 @@
 
 - name: Create folder
   file: path={{ tomcat_user_home }} state=directory owner={{ tomcat_user }} group={{ tomcat_group }} mode=0755
-  
+
 - name: Download tomcat {{ tomcat_version }}
   get_url:
     url: http://archive.apache.org/dist/tomcat/tomcat-{{ tomcat_version|first() }}/v{{ tomcat_version }}/bin/apache-tomcat-{{ tomcat_version }}.tar.gz
@@ -17,7 +17,7 @@
 - name: Extract tomcat {{ tomcat_version }}
   unarchive:
     extra_opts: ['--strip-components=1', '--show-stored-names']
-    src: /tmp/apache-tomcat-{{ tomcat_version }}.tar.gz 
+    src: /tmp/apache-tomcat-{{ tomcat_version }}.tar.gz
     dest: '{{ tomcat_user_home }}'
     remote_src: yes
   register: tomcat_extracted
@@ -27,6 +27,6 @@
   template:
     src=server.xml.j2
     dest={{ tomcat_user_home }}/conf/server.xml
-    owner={{tomcat_user}}
-    group={{tomcat_group}}
+    owner={{ tomcat_user }}
+    group={{ tomcat_group }}
     mode=0755
