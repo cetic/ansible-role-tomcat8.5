@@ -20,15 +20,15 @@ script:
   # Run tests.
   - tests/test.sh
 
- # TODTO
- # Make sure Tomcat is running.
- # - 'docker exec --tty ${container_id} env TERM=xterm curl http://localhost:$http_port'
+  # TODTO
+  # Make sure Tomcat is running.
+  # - 'docker exec --tty ${container_id} env TERM=xterm curl http://localhost:$http_port'
 
 after_failure:
   - 'docker exec --tty ${container_id} env TERM=xterm systemctl -l status tomcat'
   - 'docker exec --tty ${container_id} env TERM=xterm journalctl -xe --no-pager'
   - 'docker exec --tty ${container_id} env TERM=xterm cat /opt/tomcat/logs/catalina.out'
 
-#instruct Travis to notify Galaxy when a build completes:
+# instruct Travis to notify Galaxy when a build completes:
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
